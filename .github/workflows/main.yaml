@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: actions/Testing-github-action@v1
+        uses: actions/testing-github-action@v1
         with:
           who-to-greet: 'I am no Name'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
