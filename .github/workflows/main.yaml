@@ -14,15 +14,10 @@ jobs:
     name: A job to say hello
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      id: foo
-
-    - name: Custom Action
-      uses: actions/Testing-github-action@v1
-      with:
-        who-to-greet: 'I am no Name'
-    
-    - name: Random Number
-      run: echo random-number ${{ steps.foo.outputs.random-number }}
-      shell: bash
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: actions/Testing-github-action@v1
+        with:
+          who-to-greet: 'I am no Name'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
