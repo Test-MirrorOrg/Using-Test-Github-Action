@@ -2,10 +2,10 @@ name: Mirror Repository Workflow
 on:
   push:
     branches:
-      - main # Change this to the branch you want to trigger the action on
+      - main # Change this to the branch you want to trigger the action on, it can be a single branch or a list
   schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+    - cron: '0 * * * *'  # Runs every hour
+  workflow_dispatch:     # Allows manual trigger of action from Github UI
 
 jobs:
   mirror_job:
@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2    # Checks out our code into github runner.
 
     - name: Mirror Repository
-      uses: GHAS-Dummy/testing-github-action@v1
+      uses: GHAS-Dummy/testing-github-action@v1   # Our custom Action
       with:
         target_org: Test-MirrorOrg
         access_token: ${{ secrets.MY_GITHUB_ACCESS_TOKEN }}
