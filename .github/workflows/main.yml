@@ -20,4 +20,4 @@ jobs:
       uses: GHAS-Dummy/testing-github-action@v1   # Our custom Action
       with:
         target_org: Test-MirrorOrg
-        access_token: ${{ secrets.MY_GITHUB_ACCESS_TOKEN }}
+        access_token: ${{ secrets.MY_GITHUB_ACCESS_TOKEN }}  # Secret created within Github Organisation.
