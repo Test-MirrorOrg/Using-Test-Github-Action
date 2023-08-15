@@ -1,4 +1,2 @@
 # Using-Test-Github-Action
-..
-
 
