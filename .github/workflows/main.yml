@@ -4,7 +4,7 @@ on:
     branches:
       - main # Change this to the branch you want to trigger the action on, it can be a single branch or a list
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
+    - cron: '0 */12 * * *'  # Runs every 12 hour i.e. 12:00AM and 12PM
   workflow_dispatch:     # Allows manual trigger of action from Github UI
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2    # Checks out our code into github runner.
 
     - name: Mirror Repository
-      uses: GHAS-Dummy/testing-github-action@latest   # Our custom Action
+      uses: GHAS-Dummy/testing-github-action@v1   # Our custom Action
       with:
         target_org: Test-MirrorOrg
         access_token: ${{ secrets.MY_GITHUB_ACCESS_TOKEN }}  # Secret created within Github Organisation.
