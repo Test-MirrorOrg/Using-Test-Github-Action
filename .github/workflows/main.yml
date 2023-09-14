@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - main # Change this to the branch you want to trigger the action on, it can be a single branch or a list
-  schedule:
-    - cron: '0 */12 * * *'  # Runs every 12 hour i.e. 12:00AM and 12PM
+  # schedule:
+  #   - cron: '0 */12 * * *'  # Runs every 12 hour i.e. 12:00AM and 12PM
   workflow_dispatch:     # Allows manual trigger of action from Github UI
 
 jobs:
